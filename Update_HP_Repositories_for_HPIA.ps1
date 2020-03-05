@@ -69,8 +69,8 @@ foreach ($Model in $HPModelsTable) {
     Set-Location -Path "$($RepositoryPath)\$($Model.Model)\Repository"
       
     Log -Message "Configure notification for $($Model.Model)" -LogFile $LogFile
-    Set-RepositoryNotificationConfiguration barracuda.superior.k12.wi.us
-    Add-RepositorySyncFailureRecipient -to ryan.engstrom@superior.k12.wi.us
+    Set-RepositoryNotificationConfiguration your.smtp.server
+    Add-RepositorySyncFailureRecipient -to you@yourdomain.com
     
     Log -Message "Remove any existing repository filter for $($Model.Model) repository" -LogFile $LogFile
     Remove-RepositoryFilter -platform $($Model.ProdCode) -yes
